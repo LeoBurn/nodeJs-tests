@@ -1,7 +1,8 @@
 var http = require('http');
-var dateTimeModule = require('./custom-modules/dateTimeModule.js');
+var dateTimeModule = require('./custom_modules/dateTimeModule.js');
 var fileSystemModule = require('fs');
 var urlModule = require('url');
+var upperCaseModule = require('upper-case');
 
 http.createServer(function (request, response) {
     var query = urlModule.parse(request.url, true);
@@ -13,6 +14,7 @@ http.createServer(function (request, response) {
         }
 
         response.writeHead(200, { 'Content-Type': 'text/html' });
+        response.write(upperCaseModule("The Server is the boss!!!"));
         response.write(data);
         response.end();
     })
