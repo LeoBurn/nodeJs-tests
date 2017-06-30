@@ -4,9 +4,13 @@
   "description": "Simple node js tests",
   "main": "http.js",
   "repository": {
-  "type":"git",
-  "url":"https://github.com/LeoBurn/nodeJs-tests.git"
+    "type": "git",
+    "url": "https://github.com/LeoBurn/nodeJs-tests.git"
   },
-  "author":"Leandro Viana",
-  "license": "Leo_Burn Authors"
+  "author": "Leandro Viana",
+  "license": "MIT",
+  "dependencies": {
+    "formidable": "^1.1.1",
+    "upper-case": "^1.1.3"
+  }
 }
