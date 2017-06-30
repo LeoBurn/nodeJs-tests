@@ -1,9 +1,11 @@
 var http = require('http');
 var dateTimeModule = require('./custom-modules/dateTimeModule.js');
+var fileSystemModule = require('fs');
 
 http.createServer(function (request, response) {
-    response.writeHead(200, {'Content-Type': 'text/plain'});
-    response.write(request.url);
-    response.write(" The date and time are currently: " + dateTimeModule.myDateTime());
-    response.end();
+  fileSystemModule.readFile('./views/index.html',function(error,data){
+      response.writeHead(200, {'Content-Type':'text/html'});
+      response.write(data);
+      response.end();
+  })
 }).listen(8080);
