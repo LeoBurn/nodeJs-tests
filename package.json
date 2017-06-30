@@ -1,0 +1,12 @@
+{
+  "name": "nodejs-tests",
+  "version": "0.3.0",
+  "description": "Simple node js tests",
+  "main": "http.js",
+  "repository": {
+  "type":"git",
+  "url":"https://github.com/LeoBurn/nodeJs-tests.git"
+  },
+  "author":"Leandro Viana",
+  "license": "Leo_Burn Authors"
+}
