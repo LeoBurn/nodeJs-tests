@@ -4,6 +4,7 @@ var fileSystemModule = require('fs');
 var urlModule = require('url');
 var upperCaseModule = require('upper-case');
 var formidableModule = require('formidable');
+var configurationFile = require('./config/development.json');
 
 http.createServer(function (request, response) {
     var query = urlModule.parse(request.url, true);
@@ -23,6 +24,7 @@ http.createServer(function (request, response) {
 
         })
         return;
+        
     }
     fileSystemModule.readFile(fileName, function (error, data) {
         if (error) {
@@ -33,7 +35,7 @@ http.createServer(function (request, response) {
 
 
         response.writeHead(200, { 'Content-Type': 'text/html' });
-        response.write(upperCaseModule("The Server is the boss!!!"));
+        response.write(upperCaseModule("The Server Run in { "+configurationFile.enviroment+" } Enviroment!!"));
         response.write(data);
         response.end();
     })
